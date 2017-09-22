@@ -1,0 +1,34 @@
+<html>
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+	<script src="firstcontroller.js"></script>
+</head>
+<body>	
+	<div ng-app="SpaghettiCodeApp">
+		
+		
+		<div id=helloworld>
+			<input ng-model="name">
+			hello {{name}}
+		</div>
+		
+		
+		<div ng-controller="firstcontroller">
+			<h1>{{greeting}}</h1>
+		</div>
+		
+		
+		<div id=assignment>
+			assignment x: <input ng-model="x">
+			assignment y: <input ng-model="y">
+		</div>
+		<div id=result>
+			result:
+			{{x+y}}
+		</div>
+		
+		
+		
+	</div>
+</body>	
+</html>
