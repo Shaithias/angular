@@ -1,5 +1,5 @@
-angular.module('SpaghettiCodeApp',[])
-	.controller('firstcontroller', function($scope)
+angular.module('Main',[])
+	.controller('first_controller', function($scope)
 	{
 		$scope.greeting="Hello World";
 	});
