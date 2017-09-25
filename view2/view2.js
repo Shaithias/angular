@@ -1,14 +1,31 @@
-'use strict';
+var app=angular.module("todoApp",[]);
 
-angular.module('myApp.view2', ['ngRoute'])
-
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view2', {
-    templateUrl: 'view2/view2.html',
-    controller: 'View2Ctrl'
-  });
-}])
-
-.controller('View2Ctrl', [function() {
-
-}]);
+app.controller('todoControl', function($scope)
+{
+	$scope.tasks=[];
+	$scope.add=function()
+	{
+		if($scope.title=='')
+		{
+			alert("you can't add an empty item to your todolist!");
+		}
+		if($scope.title!='')
+		{
+			$scope.tasks.push($scope.title);
+			$scope.title="";
+		}
+	}
+	$scope.remove=function()
+	{
+		$scope.tasks.pop();
+	}
+	$scope.sort=function()
+	{
+		$scope.tasks.sort();
+	}
+	init=function()
+	{
+		$scope.title='';
+	}
+	angular.element(document).ready(init);
+});

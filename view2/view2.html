@@ -1,5 +1,29 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Todo App</title>
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+		<script src="view2.js"></script>
+		<link rel="stylesheet" type=text/css href="../stylesheets/app.css">
+	</head>
+	<body>
+		<div class="page_wrapper">
+			<div class="header_wrapper">
+				<div class="header">My Todo List</div>
+			</div>
+			<div ng-App="todoApp" ng-controller="todoControl" class="todoList">
+					<br>
+						<button ng-click="add()">Add Task</button>
+						<button ng-click="remove()">Remove</button>
+						<button ng-click="sort()">Sort</button>
+					<br>
+					<input ng-model="title">
+						<ul>
+							<li ng-repeat="t in tasks track by $index">{{ t }}</li>
+						</ul>
+			</div>
+		</div>
+	</body>
+</html>

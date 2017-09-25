@@ -23,3 +23,24 @@
   content: "|";
   padding-right: 0.3em;
 }
+
+.page_wrapper
+{	
+	display:inline-block;
+	border-style:solid;
+	border-color:black;
+	border-width:3px;
+	background:#e6e6e6;
+}
+.header_wrapper
+{
+	background:#bfbfbf;
+}
+.header
+{
+	position:relative;
+	display:inline-block;
+	left:25%;
+}
+.todoList
+{}
