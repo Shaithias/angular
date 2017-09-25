@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>View1</title>
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+		<script src="first_controller.js"></script>
+	</head>
+	<body>
+		<div ng-app="Main">
+			<div ng-controller="first_controller">
+				<h1>{{greeting}}</h1>
+			</div>
+			
+			<div ng-controller="calculator">
+				<p><input type="number" ng-model="a"></p>
+				<p><select ng-model="symbol">
+					<option>+</option>
+					<option>-</option>
+					<option>*</option>
+					<option>/</option>
+				</select></p>
+				<p><input type="number" ng-model="b"></p>
+				result:{{ result() }}
+			</div>
+		</div>
+	</body>
+</html>
