@@ -12,16 +12,21 @@ app.controller('todoControl', function($scope)
 		if($scope.title!='')
 		{
 			$scope.tasks.push($scope.title);
-			$scope.title="";
+			$scope.title="";	
+			console.log($scope.tasks);
 		}
-	}
-	$scope.remove=function()
-	{
-		$scope.tasks.pop();
 	}
 	$scope.sort=function()
 	{
 		$scope.tasks.sort();
+	}
+	$scope.remove=function(event)
+	{	
+		var index=event.target.parentNode.id;
+		if(index>-1)
+		{
+			$scope.tasks.splice(index,1);
+		}
 	}
 	init=function()
 	{

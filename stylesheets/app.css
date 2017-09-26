@@ -44,3 +44,7 @@
 }
 .todoList
 {}
+.itemList
+{
+	list-style-type:none;
+}
