@@ -24,13 +24,27 @@
   padding-right: 0.3em;
 }
 
-.page_wrapper
+.carousel_wrapper
+{
+	background:#e6e6e6;
+	height:100%;
+}
+.carousel
+{}
+.carousel_buttons
+{
+	display:block;
+	max-width:100px;
+	margin:0 auto;
+}
+.todo_list_wrapper
 {	
 	display:inline-block;
 	border-style:solid;
 	border-color:black;
 	border-width:3px;
 	background:#e6e6e6;
+
 }
 .header_wrapper
 {
