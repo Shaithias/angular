@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		
+		<title>Camera</title>
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+		<script src="view4.js"></script>
+		<link rel="stylesheet" type="text/css" href="../stylesheets/app.css">
+	</head>
+	<body>
+		<div ng-App="videoApp" ng-controller="video_controller" class="video" id="video_wrapper">
+			<div id="question">{{question}}</div><br>
+			<button id="yes_btn" ng-click="yes()">yes</button>
+			<button id="no_btn" ng-click="no()">no</button>
+		</div>
+	</body>
+</html>
