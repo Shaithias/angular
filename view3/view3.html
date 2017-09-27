@@ -2,18 +2,63 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Carousel</title>
+		<title>Calculator</title>
 		
 		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
 		<script src="view3.js"></script>
-		<link rel="stylesheet" type="text/css" href="stylesheets/app.css">
+		<link rel="stylesheet" type="text/css" href="../stylesheets/app.css">
 	</head>
 	<body>
-		<div class="carousel_wrapper" id="carousel_wrapper">
-			<div ng-App="carousel_app" ng-controller="carousel_controller" class="carousel">
-				<div class="carousel_buttons">
-					<button ng-click="left()"><--</button>
-					<button ng-click="right()">--></button>
+		<div class="calculator_wrapper" id="calculator_wrapper">
+			<div ng-App="calculator_app" ng-controller="calculator_controller" class="calculator">
+				<table class="screen">
+					<tr><td>{{results}}</tr></td>
+					
+				</table>
+				<br>
+				<div class="calculator_numbers">
+					<table>
+						<tr>
+							<td><button ng-click="one()">1</button></td>
+							<td><button ng-click="two()">2</button></td>
+							<td><button ng-click="three()">3</button></td>
+						</tr>
+						<tr>
+							<td><button ng-click="four()">4</button></td>
+							<td><button ng-click="five()">5</button></td>
+							<td><button ng-click="six()">6</button></td>
+						</tr>
+						<tr>
+							<td><button ng-click="seven()">7</button></td>
+							<td><button ng-click="eight()">8</button></td>
+							<td><button ng-click="nine()">9</button></td>
+												
+						</tr>
+						<tr>
+							<td><button ng-click="dot()">.</button></td>
+							<td><button ng-click="zero()">0</button></td>
+							<td><button ng-click="equals()">=</button></td>
+						<tr>					
+					</table>
+				</div>
+				<div class="calculator_operators">
+					<table>
+						<tr>
+							<td><button ng-click="del()">del</button></td>
+						</tr>
+						<tr>
+							<td><button ng-click="add()">+</button></td>
+						</tr>
+						<tr>
+							<td><button ng-click="minus()">-</button></td>
+						</tr>
+						<tr>
+							<td><button ng-click="mult()">*</button></td>
+						</tr>
+						<tr>
+							<td><button ng-click="div()">/</button></td>
+						</tr>
+					</table>
 				</div>
 			</div>
 		</div>

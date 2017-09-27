@@ -62,3 +62,42 @@
 {
 	list-style-type:none;
 }
+.calculator_wrapper
+{}
+.calculator
+{	
+	background:#e6e6e6;
+	display:inline-block;
+	width:140px;
+	height:190px;
+	border-radius:10px;
+	border:solid;
+}
+.calculator_buttons
+{}
+.calculator_numbers
+{
+	background:#e6e6e6;
+	float:left;
+	top:20px;
+}
+.calculator_operators
+{	
+	background:#e6e6e6;
+	display:block;
+	float:right;
+	top:100px;
+	left:185px;
+}
+.screen
+{
+	overflow:hidden;
+	position:relative;
+	top:5px;
+	height:30px;
+	width:125px;
+	margin:0 auto;
+	background:white;
+	border:solid;
+	border-radius:5px;
+}
