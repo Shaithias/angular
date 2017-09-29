@@ -13,18 +13,29 @@ app.controller('main_controller',function($scope,cross_controller)
 	}
 	$scope.yes=function()
 	{
+
 		wipeContent(["question","yes_btn","no_btn"]);
+		console.log("yes clicked");
 		cross_controller.start_video();
+		
 	}
 	$scope.no=function()
 	{
+
 		wipeContent(["question","yes_btn","no_btn"]);
+		console.log("no clicked");
 		cross_controller.stop_video();
-	}
+	}	
 });
 app.controller('video_controller',function($scope,cross_controller)
 {
-	if(cross_controller.get_state)
+	
+	console.log(cross_controller.get_state_by_observer());
+	running=cross_controller.get_state_by_observer();
+	
+	console.log(cross_controller.get_state);
+
+	if(running())
 	{
 		init_video();
 	}
