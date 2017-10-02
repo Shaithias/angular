@@ -7,6 +7,7 @@ app.controller('carousel_controller',function($scope,$http)
 	'view1/view1.html',
 	'view2/view2.html',
 	'view3/view3.html',
+	'view4/view4.html',
 	'https://www.guru99.com/angularjs-tutorial.html',
 	'https://www.angularminds.com/blog/article/comparison-difference-between-angular1-vs-angular2-vs-angular4.html',
 	'https://justintimecoder.com/first-steps-with-ng-4-material-flex-layout-and-cli-1-3-build-optimiser/'
