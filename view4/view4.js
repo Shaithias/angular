@@ -1,4 +1,4 @@
-var app=angular.module("videoApp",["cross_controller_dataservice"]);
+var app=angular.module("videoApp",[]);
 app.controller('main_controller',function($scope,cross_controller)
 {
 	$scope.question="enable video?";
@@ -29,16 +29,16 @@ app.controller('main_controller',function($scope,cross_controller)
 });
 app.controller('video_controller',function($scope,cross_controller)
 {
-	
-	console.log(cross_controller.get_state_by_observer());
-	running=cross_controller.get_state_by_observer();
-	
-	console.log(cross_controller.get_state);
-
-	if(running())
+	$scope.service=cross_controller;
+	$scope.$watch('service.get_state()',function()
 	{
-		init_video();
-	}
+		if(cross_controller.get_state()==true)
+		{
+			init_video();
+			console.log(cross_controller.get_state());
+		}
+	});
+	
 	function init_video()
 	{
 		var video=document.getElementById('video');
