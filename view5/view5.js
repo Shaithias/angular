@@ -1,0 +1,36 @@
+var app=angular.module('app',['ngRoute']);
+
+app.config(function($routeProvider)
+{
+		$routeProvider
+		.when('/node1',
+		{
+			templateUrl:'nodes/node1.html',
+			controller:'node1_controller'
+		})
+		.when('/node2',
+		{
+			templateUrl:'nodes/node2.html',
+			controller:'node2_controller'
+		})
+		.when('/node3',
+		{
+			templateUrl:'nodes/node3.html',
+			controller:'node3_controller'
+		})
+		.when('/node4',
+		{
+			templateUrl:'nodes/node4.html',
+			controller:'node4_controller'
+		});
+});
+app.controller('node1_controller',function($scope)
+{});
+app.controller('node2_controller',function($scope)
+{});
+app.controller('node3_controller',function($scope)
+{});
+app.controller('node4_controller',function($scope)
+{});
+app.controller('main_controller',function($scope)
+{});
