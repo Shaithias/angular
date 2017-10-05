@@ -1,33 +1,19 @@
-var app=angular.module("app",[]);
-app.service('back_service',function($http,$q)
+var app=angular.module("app");
+app.controller("first_controller",function($scope,back_service)
 {
-	var Person=function(first_name,last_name,age)
-	{
-		this.first_name=first_name;
-		this.last_name=last_name;
-		this.age=age;
-	}
-	Person.prototype.getName=function()
-	{
-		return (this.first_name+' '+this.last_name);
-	}
-	Person.prototype.getAge=function()
-	{
-		return this.age;
-	}
+	$scope.names=[];
+	var tyler=new back_service.Person("tyler","dylans","16");
+	var jim=new back_service.Person("jim","gumbo","15");
+	var bob=new back_service.Person("bob","jambo","18");
+	var zach=new back_service.Person("zach","bell","17");
+	$scope.names.push(tyler.getName());
+	$scope.names.push(jim.getName());
+	$scope.names.push(bob.getName());
+	$scope.names.push(zach.getName());
 });
-app.controller("main_controller",function($scope,back_service)
+app.controller("second_controller",function($scope,Person)
 {
-	names=["test","test2"];
-	var tyler=new Person("tyler","dylans","16");
-	var jim=new Person("jim","gumbo","15");
-	var bob=new Person("bob","jambo","18");
-	var zach=new Person("zach","bell","17");
-	
-	console.log(tyler.getName);
-	
-	names.push(tyler.getName());
-	names.push(jim.getName());
-	names.push(bob.getName());
-	names.push(zach.getName());
+	$scope.names2=[];
+	Person.setPerson("tyler","durden","16");
+	$scope.names2.push(Person.getName());
 });

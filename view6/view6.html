@@ -1,20 +1,31 @@
 <html>
 	<head>
 		<title>More Services</title>
-		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
-		<!--<script src="dataservices6.js"></script>-->
+		<script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+		<script src="dataservices6.js"></script>
 		<script src="view6.js"></script>
 		<link rel="stylesheet" type="text/css" href="../stylesheets/app.css">	
 	</head>
 	<body>
-		<div ng-App="app" ng-controller="main_controller" id="app_wrapper">
-			name list
-			<ul class="itemList">
-				<li id="{{$index}}" ng-repeat="n in names track by $index">
-					{{ t }}
-				</li>
-			</ul>
+		<div ng-App="app">
 		
+			<div  ng-controller="first_controller">
+				name list
+				<ul>
+					<li ng-repeat="n1 in names track by $index">
+						{{ n1 }}
+					</li>
+				</ul>
+				
+			</div>
+			
+			<div ng-controller="second_controller">
+				<ul>
+					<li ng-repeat="n2 in names2 track by $index">
+						{{ n2 }}
+					</li>
+				</ul>
+			</div>
 		</div>
 	</body>
 </html>

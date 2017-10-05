@@ -1,5 +1,5 @@
-var app=angular.module('app');
-app.service("back_service",function()
+var app=angular.module("app",[]);
+app.service('back_service',function($http,$q)
 {
 	var Person=function(first_name,last_name,age)
 	{
@@ -15,4 +15,31 @@ app.service("back_service",function()
 	{
 		return this.age;
 	}
+	this.Person=Person;
+});
+
+app.factory('Person',function()
+{
+	var Person={};
+	
+	var firstName;
+	var lastName;
+	var age;
+	
+	
+	Person.getName=function()
+	{
+		return firstName+lastName;
+	}
+	Person.getAge=function()
+	{
+		return age;
+	}
+	Person.setPerson=function(a,b,c)
+	{
+		firstName=a;
+		lastName=b;
+		age=c;
+	}
+	return Person;
 });
