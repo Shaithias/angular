@@ -8,27 +8,27 @@
 		$routeProvider
 		.when('/',
 		{
-			controller:'main_control',
-			templateUrl:'views/mainpage.html',
+			controller:'RegisterController',
+			templateUrl:'views/register/register.html',
 			controllerAs:'vm'
 		})
 		.when('/login',
 		{
-			controller:'login_control',
-			templateUrl:'views/login.html',
+			controller:'LoginController',
+			templateUrl:'views/login/login.view.html',
 			controllerAs:'vm'
 		})
 		.when('/site',
 		{
-			controller:'site_controller',
-			templateUrl:'views/site.html',
+			controller:'HomeController',
+			templateUrl:'views/home/home.view.html',
 			controllerAs:'vm'
 		})
 		.otherwise({redirectTo:'/login'});
 	}
 	run.$inject=['$rootScope','$location','$cookies','$http'];
 	
-	function run($rootScope,$location,$cookies,$http)
+	function run($rootScope,$location,$cookies,$http,$scope)
 	{
 		$rootScope.globals=$cookies.getObject('globals')||{};
 		if($rootScope.globals.currentUser)

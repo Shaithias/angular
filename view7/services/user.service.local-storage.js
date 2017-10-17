@@ -1,12 +1,12 @@
-﻿(function () {
+﻿(function () 
+{
     'use strict';
 
-    angular
-        .module('app')
-        .factory('UserService', UserService);
+    angular.module('app').factory('UserService', UserService);
 
     UserService.$inject = ['$timeout', '$filter', '$q'];
-    function UserService($timeout, $filter, $q) {
+    function UserService($timeout, $filter, $q) 
+	{
 
         var service = {};
 
@@ -19,13 +19,15 @@
 
         return service;
 
-        function GetAll() {
+        function GetAll() 
+		{
             var deferred = $q.defer();
             deferred.resolve(getUsers());
             return deferred.promise;
         }
 
-        function GetById(id) {
+        function GetById(id) 
+		{
             var deferred = $q.defer();
             var filtered = $filter('filter')(getUsers(), { id: id });
             var user = filtered.length ? filtered[0] : null;
@@ -41,11 +43,13 @@
             return deferred.promise;
         }
 
-        function Create(user) {
+        function Create(user) 
+		{
             var deferred = $q.defer();
 
             // simulate api call with $timeout
-            $timeout(function () {
+            $timeout(function () 
+			{
                 GetByUsername(user.username)
                     .then(function (duplicateUser) {
                         if (duplicateUser !== null) {
@@ -69,7 +73,8 @@
             return deferred.promise;
         }
 
-        function Update(user) {
+        function Update(user) 
+		{
             var deferred = $q.defer();
 
             var users = getUsers();
@@ -85,7 +90,8 @@
             return deferred.promise;
         }
 
-        function Delete(id) {
+        function Delete(id) 
+		{
             var deferred = $q.defer();
 
             var users = getUsers();
@@ -104,7 +110,8 @@
 
         // private functions
 
-        function getUsers() {
+        function getUsers() 
+		{
             if(!localStorage.users){
                 localStorage.users = JSON.stringify([]);
             }
@@ -112,7 +119,8 @@
             return JSON.parse(localStorage.users);
         }
 
-        function setUsers(users) {
+        function setUsers(users) 
+		{
             localStorage.users = JSON.stringify(users);
         }
     }

@@ -22,7 +22,8 @@ app.config(function($routeProvider)
 		{
 			templateUrl:'nodes/node4.html',
 			controller:'node4_controller'
-		});
+		})
+		.otherwise({redirectTo:'/node4'});
 });
 app.controller('node1_controller',function($scope)
 {});
